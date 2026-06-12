@@ -46,7 +46,7 @@ This project implements a closed-loop MLOps system that balances real-time model
 ## 📂 Project Directory Structure
 
 ```text
-PythonProject4/
+Real-World-ML-Engineering/
 ├── .github/
 │   └── workflows/
 │       ├── test.yml                 # Automated testing CI pipeline
