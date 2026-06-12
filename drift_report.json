@@ -1,0 +1,44 @@
+[
+  {
+    "timestamp": "2026-06-13T02:57:38.002163",
+    "drift_detected": false,
+    "features": {
+      "temperature": {
+        "drift_detected": false,
+        "p_value": 0.5639454005192106,
+        "statistic": 0.043
+      },
+      "vibration": {
+        "drift_detected": false,
+        "p_value": 0.16506925679519438,
+        "statistic": 0.061
+      },
+      "pressure": {
+        "drift_detected": false,
+        "p_value": 0.448824334217358,
+        "statistic": 0.047
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-13T02:57:38.044585",
+    "drift_detected": true,
+    "features": {
+      "temperature": {
+        "drift_detected": true,
+        "p_value": 3.560264756015972e-82,
+        "statistic": 0.518
+      },
+      "vibration": {
+        "drift_detected": true,
+        "p_value": 4.060983588844777e-91,
+        "statistic": 0.544
+      },
+      "pressure": {
+        "drift_detected": false,
+        "p_value": 0.47648386385946345,
+        "statistic": 0.046
+      }
+    }
+  }
+]

@@ -1,0 +1,36 @@
+name: Automated Retraining
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Executes automated runs every Sunday at midnight
+  workflow_dispatch: # Allows manual trigger directly via GitHub UI
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Access repository data
+      uses: actions/checkout@v3
+
+    - name: Set up runtime pipeline env
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Load application baseline binaries
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run distribution checks
+      run: python test_drift.py
+
+    - name: Trigger automated optimization pipeline
+      run: python retrain_pipeline.py
+
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: drift-report
+        path: drift_report.json
